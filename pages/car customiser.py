@@ -1,6 +1,5 @@
 import streamlit as st
 
-# Custom CSS for styling
 st.markdown(
     """
     <style>
@@ -87,10 +86,8 @@ st.markdown(
 st.markdown("<h1 class='title-font'>Rusteeze Car Customizers</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
-# Sidebar for selection
-st.sidebar.header("Customize Your Car")
+st.header("Customize Your Car")
 
-# Car parts and their prices
 car_parts = {
     "Wheels": {
         "Basic Wheels": 100,
@@ -118,22 +115,18 @@ car_parts = {
 user_choices = {}
 total_cost = 0
 
-# Selection for car parts in the sidebar
 for part, options in car_parts.items():
-    user_choice = st.sidebar.selectbox(f"Select {part}", options.keys(), key=part)
+    user_choice = st.selectbox(f"Select {part}", options.keys(), key=part)
     user_choices[part] = user_choice
     total_cost += options[user_choice]
 
-# Display customization summary
 st.markdown("<div class='summary'>", unsafe_allow_html=True)
 st.write("### Your Customization Summary")
 for part, choice in user_choices.items():
     st.write(f"{part}: {choice} - ${car_parts[part][choice]}")
 st.markdown("</div>", unsafe_allow_html=True)
 
-# Display total cost
 st.write("### Total Cost: ", f"<span class='total-cost'>${total_cost}</span>", unsafe_allow_html=True)
 
-# Purchase button
 if st.button("Purchase"):
     st.markdown("<div class='purchase-button'>Thank you for your purchase! Your car will be ready soon.</div>", unsafe_allow_html=True)
