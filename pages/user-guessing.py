@@ -40,3 +40,9 @@ if st.button("Submit Guess"):
 
 if st.session_state.guessed_numbers:
     st.write("Your guesses:", st.session_state.guessed_numbers)
+
+def binary_search_guess(low, high, guess_count):
+    """ Binary search algorithm to guess the number """
+    return (low + high) // 2
+
+    

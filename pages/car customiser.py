@@ -130,3 +130,5 @@ st.write("### Total Cost: ", f"<span class='total-cost'>${total_cost}</span>", u
 
 if st.button("Purchase"):
     st.markdown("<div class='purchase-button'>Thank you for your purchase! Your car will be ready soon.</div>", unsafe_allow_html=True)
+
+
