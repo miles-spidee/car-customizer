@@ -1,10 +1,9 @@
 import streamlit as st
 
 def binary_search_guess(low, high, guess_count):
-    """ Binary search algorithm to guess the number """
     return (low + high) // 2
 
-def main():
+def guess_game():
     st.title("Computer Guesses Your Number Using Binary Search")
     
     st.sidebar.header("Set Range for Guessing")
@@ -32,7 +31,7 @@ def main():
         )
         
         if feedback == 'Correct':
-            st.success(f"Yay! The computer guessed your number, {guess}, in {guess_count} guesses!")
+            st.success(f"The computer guessed your number, {guess}, in {guess_count} guesses!")
             break
         elif feedback == 'Too High':
             high = guess - 1
@@ -41,5 +40,4 @@ def main():
         
         guess = binary_search_guess(low, high, guess_count)
 
-if __name__ == "__main__":
-    main()
+guess_game()
