@@ -1,6 +1,11 @@
 import streamlit as st
 import random
 
+st.set_page_config(
+    page_title="Guess Game",
+    page_icon=":question:",
+)
+
 if 'number_to_guess' not in st.session_state:
     st.session_state.number_to_guess = random.randint(1, 100)
 if 'attempts' not in st.session_state:

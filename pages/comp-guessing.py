@@ -1,5 +1,10 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Guess Game",
+    page_icon=":question:",
+)
+
 def binary_search_guess(low, high, guess_count):
     return (low + high) // 2
 

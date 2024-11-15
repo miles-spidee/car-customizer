@@ -1,5 +1,10 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Rusteeze",
+    page_icon=":car:",
+)
+
 st.markdown(
     """
     <style>
